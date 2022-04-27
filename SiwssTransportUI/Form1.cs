@@ -1,8 +1,7 @@
 namespace SiwssTransportUI;
-
-public partial class Form1 : Form
+public partial class MainForm : Form
 {
-    public Form1()
+    public MainForm()
     {
         InitializeComponent();
     }
@@ -26,4 +25,29 @@ public partial class Form1 : Form
     {
 
     }
+
+    private void label1_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void label2_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void btnSuchen_Click(object sender, EventArgs e)
+    {
+        string Startstation = txtbVon.Text;
+        string Endstation = txtbBis.Text;
+        if (Startstation == Endstation)
+        {
+            MessageBox.Show("Geben sie unterschiedliche Stationen an");
+        }
+        else
+        {
+            listbox4Verbindungen.Items.Add();
+        }
+    }
 }
+
