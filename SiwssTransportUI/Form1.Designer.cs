@@ -28,44 +28,68 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.placeholderBoxVon = new PlaceholderTextBox.PlaceholderTextBox();
+            this.placeholderBoxBis = new PlaceholderTextBox.PlaceholderTextBox();
+            this.btnSuchen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // placeholderBoxVon
             // 
-            this.button1.Location = new System.Drawing.Point(95, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.placeholderBoxVon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.placeholderBoxVon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.placeholderBoxVon.Font = new System.Drawing.Font("Segoe UI Light", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.placeholderBoxVon.ForeColor = System.Drawing.Color.Silver;
+            this.placeholderBoxVon.Location = new System.Drawing.Point(12, 12);
+            this.placeholderBoxVon.Name = "placeholderBoxVon";
+            this.placeholderBoxVon.PlaceholderText = "Von";
+            this.placeholderBoxVon.Size = new System.Drawing.Size(381, 70);
+            this.placeholderBoxVon.TabIndex = 1;
+            this.placeholderBoxVon.TextChanged += new System.EventHandler(this.placeholderTextBox1_TextChanged);
             // 
-            // button2
+            // placeholderBoxBis
             // 
-            this.button2.Location = new System.Drawing.Point(230, 41);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 29);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.placeholderBoxBis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.placeholderBoxBis.Font = new System.Drawing.Font("Segoe UI Light", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.placeholderBoxBis.ForeColor = System.Drawing.Color.Silver;
+            this.placeholderBoxBis.Location = new System.Drawing.Point(407, 12);
+            this.placeholderBoxBis.Name = "placeholderBoxBis";
+            this.placeholderBoxBis.PlaceholderText = "Bis";
+            this.placeholderBoxBis.Size = new System.Drawing.Size(381, 70);
+            this.placeholderBoxBis.TabIndex = 2;
+            this.placeholderBoxBis.TextChanged += new System.EventHandler(this.placeholderBoxBis_TextChanged);
+            // 
+            // btnSuchen
+            // 
+            this.btnSuchen.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnSuchen.Location = new System.Drawing.Point(12, 88);
+            this.btnSuchen.Name = "btnSuchen";
+            this.btnSuchen.Size = new System.Drawing.Size(776, 35);
+            this.btnSuchen.TabIndex = 3;
+            this.btnSuchen.Text = "Suchen";
+            this.btnSuchen.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSuchen);
+            this.Controls.Add(this.placeholderBoxBis);
+            this.Controls.Add(this.placeholderBoxVon);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private Button button1;
-        private Button button2;
+        private PlaceholderTextBox.PlaceholderTextBox placeholderBoxVon;
+        private PlaceholderTextBox.PlaceholderTextBox placeholderBoxBis;
+        private Button btnSuchen;
     }
 }
