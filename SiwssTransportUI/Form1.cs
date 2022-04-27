@@ -38,15 +38,15 @@ public partial class MainForm : Form
 
     private void btnSuchen_Click(object sender, EventArgs e)
     {
-        string Startstation = txtbVon.Text;
-        string Endstation = txtbBis.Text;
+        string Startstation = cmbBoxStart.Text;
+        string Endstation = cmbBoxEnde.Text;
         if (Startstation == Endstation)
         {
             MessageBox.Show("Geben sie unterschiedliche Stationen an");
         }
         else
         {
-            listbox4Verbindungen.Items.Add();
+            listbox4Verbindungen.Items.Add(Endstation);
         }
     }
 }

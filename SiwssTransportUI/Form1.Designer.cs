@@ -29,27 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.txtbBis = new PlaceholderTextBox.PlaceholderTextBox();
             this.btnSuchen = new System.Windows.Forms.Button();
             this.lbl4Verbindungen = new System.Windows.Forms.Label();
             this.listbox4Verbindungen = new System.Windows.Forms.ListBox();
             this.lblAbfahrt = new System.Windows.Forms.Label();
             this.listBoxAbfahrt = new System.Windows.Forms.ListBox();
-            this.txtbVon = new PlaceholderTextBox.PlaceholderTextBox();
+            this.cmbBoxStart = new System.Windows.Forms.ComboBox();
+            this.cmbBoxEnde = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // txtbBis
-            // 
-            this.txtbBis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtbBis.Font = new System.Drawing.Font("Segoe UI Light", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtbBis.ForeColor = System.Drawing.Color.Silver;
-            this.txtbBis.Location = new System.Drawing.Point(407, 12);
-            this.txtbBis.Name = "txtbBis";
-            this.txtbBis.PlaceholderText = "Bis";
-            this.txtbBis.Size = new System.Drawing.Size(381, 70);
-            this.txtbBis.TabIndex = 2;
-            this.txtbBis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtbBis.TextChanged += new System.EventHandler(this.placeholderBoxBis_TextChanged);
             // 
             // btnSuchen
             // 
@@ -112,17 +99,27 @@
             this.listBoxAbfahrt.Size = new System.Drawing.Size(776, 128);
             this.listBoxAbfahrt.TabIndex = 7;
             // 
-            // txtbVon
+            // cmbBoxStart
             // 
-            this.txtbVon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtbVon.Font = new System.Drawing.Font("Segoe UI Light", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtbVon.ForeColor = System.Drawing.Color.Silver;
-            this.txtbVon.Location = new System.Drawing.Point(12, 12);
-            this.txtbVon.Name = "txtbVon";
-            this.txtbVon.PlaceholderText = "Von";
-            this.txtbVon.Size = new System.Drawing.Size(381, 70);
-            this.txtbVon.TabIndex = 8;
-            this.txtbVon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cmbBoxStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbBoxStart.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbBoxStart.ForeColor = System.Drawing.Color.Silver;
+            this.cmbBoxStart.FormattingEnabled = true;
+            this.cmbBoxStart.Location = new System.Drawing.Point(12, 12);
+            this.cmbBoxStart.Name = "cmbBoxStart";
+            this.cmbBoxStart.Size = new System.Drawing.Size(382, 70);
+            this.cmbBoxStart.TabIndex = 9;
+            // 
+            // cmbBoxEnde
+            // 
+            this.cmbBoxEnde.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbBoxEnde.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbBoxEnde.ForeColor = System.Drawing.Color.Silver;
+            this.cmbBoxEnde.FormattingEnabled = true;
+            this.cmbBoxEnde.Location = new System.Drawing.Point(408, 12);
+            this.cmbBoxEnde.Name = "cmbBoxEnde";
+            this.cmbBoxEnde.Size = new System.Drawing.Size(382, 70);
+            this.cmbBoxEnde.TabIndex = 10;
             // 
             // MainForm
             // 
@@ -130,13 +127,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(800, 571);
-            this.Controls.Add(this.txtbVon);
+            this.Controls.Add(this.cmbBoxEnde);
+            this.Controls.Add(this.cmbBoxStart);
             this.Controls.Add(this.listBoxAbfahrt);
             this.Controls.Add(this.lblAbfahrt);
             this.Controls.Add(this.listbox4Verbindungen);
             this.Controls.Add(this.lbl4Verbindungen);
             this.Controls.Add(this.btnSuchen);
-            this.Controls.Add(this.txtbBis);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "SwissTransport";
@@ -147,12 +144,12 @@
         }
 
         #endregion
-        private PlaceholderTextBox.PlaceholderTextBox txtbBis;
         private Button btnSuchen;
         private Label lbl4Verbindungen;
         private ListBox listbox4Verbindungen;
         private Label lblAbfahrt;
         private ListBox listBoxAbfahrt;
-        private PlaceholderTextBox.PlaceholderTextBox txtbVon;
+        private ComboBox cmbBoxStart;
+        private ComboBox cmbBoxEnde;
     }
 }
