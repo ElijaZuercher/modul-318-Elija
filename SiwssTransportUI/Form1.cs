@@ -18,8 +18,9 @@ public partial class MainForm : Form
         string Startstation = cmbBoxStart.Text;
         string Endstation = cmbBoxEnde.Text;
         var Verbindungen = Datenbank.GetConnections(Startstation, Endstation);
-        var Abfahrtplan = Datenbank.GetStationBoard(Startstation, "1");
-
+        var Abfahrtplan = Datenbank.GetStationBoard(cmbBoxStart.Text, "1");
+        listbox4Verbindungen.Items.Clear();
+        listBoxAbfahrt.Items.Clear();
         if (Startstation == Endstation)
         {
             MessageBox.Show("Geben sie unterschiedliche Stationen an");
@@ -60,23 +61,28 @@ public partial class MainForm : Form
                     + "\t\t" + Connection.From.Delay + "min" + "\t\t\t"
                     + Connection.From.Station.Name);
                 }
-                listBoxAbfahrt.Items.Add("Abfahrt:\t\t Nummer:\t\t Station:");
-                foreach (var Station in Abfahrtplan.Entries)
-                {
-                    listBoxAbfahrt.Items.Add(String.Format("{0:HH:mm}", Station.Name));
-                }
+                
 
             }
+                listBoxAbfahrt.Items.Add("Abfahrt:\t\tNummer:");
+                int maximum = 0;
+                foreach (var Station in Abfahrtplan.Entries)
+                {
+                    maximum++;
+                    listBoxAbfahrt.Items.Add(string.Format("{0:HH:mm}",Station.Stop.Departure)+ "\t\t"  +Station.Category + Station.Number);
+                    if (maximum >= 10) break;
+                    
+                }
         }
 
 
     }
     private void cmbBoxStart_KeyUp(object sender, KeyEventArgs e)
     {
-        if(e.KeyData== Keys.Enter)
-        {
-            string Startstation = cmbBoxStart.Text;
-        }
+        //if(e.KeyData== Keys.Enter)
+        //{
+        //    string Startstation = cmbBoxStart.Text;
+        //}
         //das gleiche wie bei den connetcition
 
         //combobox auslesen 
@@ -86,5 +92,18 @@ public partial class MainForm : Form
         //immer den namen auf die neue liste aufschreiben
         //foreach jeder 10 stationsnamen jeder name der combobox als item hinzufügen
     }
-}
 
+    private void cmbBoxEnde_KeyUp(object sender, KeyEventArgs e)
+    {
+        
+        if (e.KeyData == Keys.Enter)
+        {
+            btnSuchen.PerformClick();
+
+
+
+        }
+    }
+
+    
+}

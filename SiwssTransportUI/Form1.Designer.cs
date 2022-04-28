@@ -96,7 +96,7 @@
             this.listBoxAbfahrt.ItemHeight = 31;
             this.listBoxAbfahrt.Location = new System.Drawing.Point(12, 400);
             this.listBoxAbfahrt.Name = "listBoxAbfahrt";
-            this.listBoxAbfahrt.Size = new System.Drawing.Size(1287, 159);
+            this.listBoxAbfahrt.Size = new System.Drawing.Size(1287, 345);
             this.listBoxAbfahrt.TabIndex = 7;
             // 
             // cmbBoxStart
@@ -121,6 +121,7 @@
             this.cmbBoxEnde.Name = "cmbBoxEnde";
             this.cmbBoxEnde.Size = new System.Drawing.Size(642, 70);
             this.cmbBoxEnde.TabIndex = 10;
+            this.cmbBoxEnde.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmbBoxEnde_KeyUp);
             // 
             // lblVon
             // 
@@ -149,7 +150,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1311, 574);
+            this.ClientSize = new System.Drawing.Size(1311, 756);
             this.Controls.Add(this.lblBis);
             this.Controls.Add(this.lblVon);
             this.Controls.Add(this.cmbBoxEnde);
