@@ -110,7 +110,7 @@
             this.cmbBoxStart.Location = new System.Drawing.Point(12, 21);
             this.cmbBoxStart.Name = "cmbBoxStart";
             this.cmbBoxStart.Size = new System.Drawing.Size(642, 70);
-            this.cmbBoxStart.TabIndex = 9;
+            this.cmbBoxStart.TabIndex = 1;
             this.cmbBoxStart.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmbBoxStart_KeyUp);
             // 
             // cmbBoxEnde
@@ -122,7 +122,7 @@
             this.cmbBoxEnde.Location = new System.Drawing.Point(657, 21);
             this.cmbBoxEnde.Name = "cmbBoxEnde";
             this.cmbBoxEnde.Size = new System.Drawing.Size(642, 70);
-            this.cmbBoxEnde.TabIndex = 10;
+            this.cmbBoxEnde.TabIndex = 2;
             this.cmbBoxEnde.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmbBoxEnde_KeyUp);
             // 
             // lblVon
