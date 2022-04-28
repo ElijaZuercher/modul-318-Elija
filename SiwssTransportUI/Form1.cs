@@ -46,7 +46,7 @@ public partial class MainForm : Form
         }
         else
         {
-            listbox4Verbindungen.Items.Add(Endstation);
+            listbox4Verbindungen.Items.Add(Startstation);
         }
     }
 }
