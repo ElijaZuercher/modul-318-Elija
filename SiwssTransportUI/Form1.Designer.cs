@@ -61,7 +61,6 @@
             this.lbl4Verbindungen.Size = new System.Drawing.Size(266, 31);
             this.lbl4Verbindungen.TabIndex = 4;
             this.lbl4Verbindungen.Text = "Nächste 4 Verbindungen";
-            this.lbl4Verbindungen.Click += new System.EventHandler(this.label1_Click);
             // 
             // listbox4Verbindungen
             // 
@@ -85,7 +84,6 @@
             this.lblAbfahrt.Size = new System.Drawing.Size(153, 31);
             this.lblAbfahrt.TabIndex = 6;
             this.lblAbfahrt.Text = "Abfahrts Tafel";
-            this.lblAbfahrt.Click += new System.EventHandler(this.label2_Click);
             // 
             // listBoxAbfahrt
             // 
@@ -137,7 +135,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "SwissTransport";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
