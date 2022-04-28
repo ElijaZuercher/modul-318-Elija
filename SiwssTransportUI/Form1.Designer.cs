@@ -109,6 +109,7 @@
             this.cmbBoxStart.Name = "cmbBoxStart";
             this.cmbBoxStart.Size = new System.Drawing.Size(642, 70);
             this.cmbBoxStart.TabIndex = 9;
+            this.cmbBoxStart.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmbBoxStart_KeyUp);
             // 
             // cmbBoxEnde
             // 
