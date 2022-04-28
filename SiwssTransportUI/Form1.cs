@@ -64,12 +64,12 @@ public partial class MainForm : Form
                 
 
             }
-                listBoxAbfahrt.Items.Add("Abfahrt:\t\tNummer:");
+                listBoxAbfahrt.Items.Add("Abfahrt:\t\tNummer:\t\tEndstation:");
                 int maximum = 0;
                 foreach (var Station in Abfahrtplan.Entries)
                 {
                     maximum++;
-                    listBoxAbfahrt.Items.Add(string.Format("{0:HH:mm}",Station.Stop.Departure)+ "\t\t"  +Station.Category + Station.Number);
+                    listBoxAbfahrt.Items.Add(string.Format("{0:HH:mm}",Station.Stop.Departure)+ "\t\t"  +Station.Category + Station.Number+"\t\t"+ Station.To);
                     if (maximum >= 10) break;
                     
                 }
@@ -79,10 +79,22 @@ public partial class MainForm : Form
     }
     private void cmbBoxStart_KeyUp(object sender, KeyEventArgs e)
     {
-        //if(e.KeyData== Keys.Enter)
-        //{
-        //    string Startstation = cmbBoxStart.Text;
-        //}
+        if(e.KeyData== Keys.Enter)
+        {
+            cmbBoxStart.Items.Clear();
+            var stationbekommen = Datenbank.GetStations(cmbBoxStart.Text);
+
+            List<string> neueliste = new List<string>();
+
+            foreach(var inliste in stationbekommen.StationList)
+            {
+                neueliste.Add(inliste.Name.ToString());
+            }
+            foreach(var liste2 in neueliste)
+            {
+                cmbBoxStart.Items.Add(liste2.ToString());
+            }
+        }
         //das gleiche wie bei den connetcition
 
         //combobox auslesen 
@@ -98,10 +110,20 @@ public partial class MainForm : Form
         
         if (e.KeyData == Keys.Enter)
         {
-            btnSuchen.PerformClick();
+            cmbBoxEnde.Items.Clear();
+            var stationbekommen = Datenbank.GetStations(cmbBoxEnde.Text);
 
+            List<string> neueliste = new List<string>();
 
-
+            foreach (var inliste in stationbekommen.StationList)
+            {
+                neueliste.Add(inliste.Name.ToString());
+            }
+            foreach (var liste2 in neueliste)
+            {
+                cmbBoxEnde.Items.Add(liste2.ToString());
+            }
+            //doppelt gebindet beheben
         }
     }
 
