@@ -73,12 +73,10 @@ public partial class MainForm : Form
                     
                 }
         }
-
-
     }
-    private void cmbBoxStart_KeyUp(object sender, KeyEventArgs e)
+    private void cmbBoxStart_KeyUp(object sender, KeyEventArgs tastenlesen)
     {
-        if(e.KeyData== Keys.Enter)
+        if(tastenlesen.KeyData== Keys.Enter)
         {
             cmbBoxStart.Items.Clear();
             var stationbekommen = Datenbank.GetStations(cmbBoxStart.Text);
@@ -89,25 +87,18 @@ public partial class MainForm : Form
             {
                 neueliste.Add(inliste.Name.ToString());
             }
-            foreach(var liste2 in neueliste)
+            foreach(var neuelisteAusgabe in neueliste)
             {
-                cmbBoxStart.Items.Add(liste2.ToString());
+                cmbBoxStart.Items.Add(neuelisteAusgabe.ToString());
             }
         }
-        //das gleiche wie bei den connetcition
-
-        //combobox auslesen 
-        //getstation mit inhalt der combobox
-        //lere liste
-        //foreach(für jede station in der stationsliste)
-        //immer den namen auf die neue liste aufschreiben
-        //foreach jeder 10 stationsnamen jeder name der combobox als item hinzufügen
+        
     }
 
-    private void cmbBoxEnde_KeyUp(object sender, KeyEventArgs e)
+    private void cmbBoxEnde_KeyUp(object sender, KeyEventArgs tastenlesen)
     {
         
-        if (e.KeyData == Keys.Enter)
+        if (tastenlesen.KeyData == Keys.Enter)
         {
             cmbBoxEnde.Items.Clear();
             var stationbekommen = Datenbank.GetStations(cmbBoxEnde.Text);
@@ -124,7 +115,7 @@ public partial class MainForm : Form
                 cmbBoxEnde.Items.Add(liste2.ToString());
             }
             
-            //doppelt gebindet beheben (check)
+            //doppelt belegte Entertaste beheben (done)
         }
     }
 

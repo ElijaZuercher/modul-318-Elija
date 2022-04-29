@@ -158,11 +158,11 @@
             this.lblUhrzeit.AutoSize = true;
             this.lblUhrzeit.Font = new System.Drawing.Font("Segoe UI", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblUhrzeit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblUhrzeit.Location = new System.Drawing.Point(520, -7);
+            this.lblUhrzeit.Location = new System.Drawing.Point(488, -7);
             this.lblUhrzeit.Name = "lblUhrzeit";
-            this.lblUhrzeit.Size = new System.Drawing.Size(272, 159);
+            this.lblUhrzeit.Size = new System.Drawing.Size(353, 159);
             this.lblUhrzeit.TabIndex = 13;
-            this.lblUhrzeit.Text = "Von";
+            this.lblUhrzeit.Text = "00:00";
             // 
             // timer1
             // 
