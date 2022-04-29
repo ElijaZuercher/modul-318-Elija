@@ -14,11 +14,8 @@ public partial class MainForm : Form
 
     private void btnSuchen_Click(object sender, EventArgs e)
     {
-       
         string Startstation = cmbBoxStart.Text;
         string Endstation = cmbBoxEnde.Text;
-        var Verbindungen = Datenbank.GetConnections(Startstation, Endstation);
-        var Abfahrtplan = Datenbank.GetStationBoard(cmbBoxStart.Text, "1");
         listbox4Verbindungen.Items.Clear();
         listBoxAbfahrt.Items.Clear();
         if (Startstation == Endstation)
@@ -29,9 +26,11 @@ public partial class MainForm : Form
         {
             MessageBox.Show("Geben sie Stationen ein");
         }
-        else
+        else if(Startstation!="" && Endstation!="")
         {
-            listbox4Verbindungen.Items.Add("Abfahrt:\t\t AbfahrtsOrt:\t\tAnkunft:\t\tVerspätung:\t\t Station:");
+            var Verbindungen = Datenbank.GetConnections(Startstation, Endstation);
+            var Abfahrtplan = Datenbank.GetStationBoard(cmbBoxStart.Text, "1");
+            listbox4Verbindungen.Items.Add("Abfahrt:\t\tAbfahrtsOrt:\t\tAnkunft:\t\tVerspätung:\t\tStation:");
             foreach (var Connection in Verbindungen.ConnectionList)
             {
                 if (Connection.From.Delay == 0)
@@ -83,7 +82,7 @@ public partial class MainForm : Form
         {
             cmbBoxStart.Items.Clear();
             var stationbekommen = Datenbank.GetStations(cmbBoxStart.Text);
-
+            cmbBoxStart.DroppedDown = true;
             List<string> neueliste = new List<string>();
 
             foreach(var inliste in stationbekommen.StationList)
@@ -112,8 +111,9 @@ public partial class MainForm : Form
         {
             cmbBoxEnde.Items.Clear();
             var stationbekommen = Datenbank.GetStations(cmbBoxEnde.Text);
-
+            cmbBoxEnde.DroppedDown = true;
             List<string> neueliste = new List<string>();
+            
 
             foreach (var inliste in stationbekommen.StationList)
             {
@@ -123,9 +123,13 @@ public partial class MainForm : Form
             {
                 cmbBoxEnde.Items.Add(liste2.ToString());
             }
+            
             //doppelt gebindet beheben (check)
         }
     }
 
-    
+    private void timer1_Tick(object sender, EventArgs e)
+    {
+        lblUhrzeit.Text=DateTime.Now.ToString("HH:mm");
+    }
 }
