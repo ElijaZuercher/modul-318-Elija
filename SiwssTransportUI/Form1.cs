@@ -123,7 +123,7 @@ public partial class MainForm : Form
             {
                 cmbBoxEnde.Items.Add(liste2.ToString());
             }
-            //doppelt gebindet beheben
+            //doppelt gebindet beheben (check)
         }
     }
 
