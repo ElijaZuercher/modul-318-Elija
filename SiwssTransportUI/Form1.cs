@@ -30,6 +30,7 @@ public partial class MainForm : Form
         {
             MessageBox.Show("Geben sie Stationen ein");
         }
+  
         else if(Startstation!="" && Endstation!="")
         {
             //Es wird die Methdode GetConnection aufgerufen und die Eingaben der Start und Endstation eingelesen
